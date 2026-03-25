@@ -13,7 +13,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 6px;
-padding: 20px 0;
+padding-top: 20px;
 `
 
 export const ContainerImagem = styled.div`
@@ -179,7 +179,7 @@ align-items: center;
 justify-content: center;
 
 & img {
-    width: 100px;
+    width: 120px;
     cursor: pointer;
     transition: transform 0.5s ease;
     transform-origin: center;
