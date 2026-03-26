@@ -77,9 +77,10 @@ justify-content: center;
 align-items: center;
 background-color: green;
 border-radius: 999px;
-margin-top: 30px;
+margin: 20px 0;
 width: 100px;
 height: 100px;
+box-shadow: 0 0px 20px rgba(0, 0, 0, 0.8);
 
 & img {
     width: 35px;
@@ -91,7 +92,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-align: center;
-gap: 30px;
+gap: 10px;
 `
 
 export const Card = styled.div`
@@ -109,6 +110,11 @@ height: 60px;
 & img {
     width: 15px;
 }
+
+&.active {
+    background-color: green;
+    color: #ffff;
+  }
 `
 
 export const State = styled.p`
@@ -116,6 +122,10 @@ font-size: .7rem;
 color: gray;
 font-weight: bold;
 color: #888888;
+
+&.active {
+  color: #ffff;
+}
 `
 
 export const Feedback = styled.section`

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import {
   ActualState,
   Card,
@@ -29,7 +31,30 @@ import ImageMotivation from '../../assets/suporte-da-equipe.png'
 
 function Home() {
 
+  const [state, setState] = useState('Focado')
+
+  const contentByState = {
+    Focado: {
+      description: "Você está no seu auge! Aproveite este momento de clareza.",
+      suggestion:
+        "Mantenha-se hidratado e continue assim. Este é o momento ideal para tarefas complexas."
+
+    },
+    Cansado: {
+      description: "Seu ritmo diminuiu um pouco. Talvez seja hora de desacelerar.",
+      suggestion:
+        "Respire fundo, reorganize as ideias e avance com calma. Uma pequena pausa mental pode ajudar você a recuperar o foco."
+    },
+    Pausa: {
+      description:
+        "Você vem se esforçando bastante, talvez seja a hora de cuidar um pouco de você.",
+      suggestion:
+        "Pare por alguns minutos, beba água, alongue o corpo e respire fundo. Descansar também faz parte do processo."
+    }
+  }
+
   return (
+
     <>
       <Wrapper>
         <Header>
@@ -51,30 +76,39 @@ function Home() {
             </ContainerRay>
 
             <StateCards>
-              <Card>
+              <Card
+                onClick={() => setState('Focado')}
+                className={state === 'Focado' ? 'active' : ''}
+              >
                 <img src={FocusImage} alt="imagem-foco" className="image-card" />
-                <State className="active">Focado</State>
+                <State className={state === 'Focado' ? 'active' : ''}>Focado</State>
               </Card>
 
-              <Card>
+              <Card
+                onClick={() => setState('Cansado')}
+                className={state === 'Cansado' ? 'active' : ''}
+              >
                 <img src={TiredImage} alt="imagem-cansado" className="image-card" />
-                <State>Cansado</State>
+                <State className={state === 'Cansado' ? 'active' : ''}>Cansado</State>
               </Card>
 
-              <Card>
+              <Card
+                onClick={() => setState('Pausa')}
+                className={state === 'Pausa' ? 'active' : ''}
+              >
                 <img src={PauseImage} alt="imagem-pausa" className="image-card" />
-                <State>Pausa</State>
+                <State className={state === 'Pausa' ? 'active' : ''}>Pausa</State>
               </Card>
             </StateCards>
 
             <Feedback>
-              <ActualState>Focado</ActualState>
-              <Description>Você está no seu auge! Aproveite este momento de clareza.</Description>
-              <Sugestion>Mantenha-se hidratado e continue assim. Este é o momento ideal para tarefas complexas.</Sugestion>
+              <ActualState>{state}</ActualState>
+              <Description>{contentByState[state].description}</Description>
+              <Sugestion>{contentByState[state].suggestion}</Sugestion>
             </Feedback>
 
             <StateReset>
-              <Reset type="button">Resetar Estado</Reset>
+              <Reset type="button" onClick={() => setState('Focado')}>Resetar Estado</Reset>
             </StateReset>
           </ContainerContent>
 
