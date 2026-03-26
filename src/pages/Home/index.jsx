@@ -20,12 +20,12 @@ import {
   Wrapper
 } from "./styles"
 
-import HeaderImage from './assets/tempo.png'
-import RayImage from './assets/parafuso.png'
-import FocusImage from './assets/foco.png'
-import TiredImage from './assets/fadiga.png'
-import PauseImage from './assets/xicara-de-cafe.png'
-import ImageMotivation from './assets/suporte-da-equipe.png'
+import HeaderImage from '../../assets/tempo.png'
+import RayImage from '../../assets/parafuso.png'
+import FocusImage from '../../assets/foco.png'
+import TiredImage from '../../assets/fadiga.png'
+import PauseImage from '../../assets/xicara-de-cafe.png'
+import ImageMotivation from '../../assets/suporte-da-equipe.png'
 
 function Home() {
 
