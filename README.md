@@ -11,6 +11,10 @@
   <a href="#-project-structure">Estrutura</a>
 </p>
 
+<br>
+
+<img src="./src/assets/Mockup - FocusSignal.png" alt="Mockup Focus Signal" width="100%">
+
 ---
 
 ## 🏠 About the project
